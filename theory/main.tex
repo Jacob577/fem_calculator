@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{mathtools} %
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\title{FEM - calculator}
+\author{Jacob577}
+\date{April 2021}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+\include{equations}
+
+\newpage
+
+Finite elements are calculated through dividing an element/wall into several small parts as shown in figure 1. Thereafter an iterative process is performed for every time-step until equilibrium is reached for respective time step. This specific Finite Element calculator is based on incoming heat flux and the ambient temperature on the none exposed side of the element. 
+\begin{center}
+\begin{tabular}{ c|c|c|c|c|c|c } 
+ \hline
+ {} & {} & {} & {} & {} & {} \\ 
+ Fire & ... & m - 1 & m & m + 1 & ... & Ambient \\ 
+ compartment & {} & {} & {} & {} & {} & temperature \\ 
+ {} & {} & {} & {} & {} & {} \\
+ \hline
+\end{tabular}
+\end{center}
+
+Whereas each segment between each node can be described as:
+\begin{center}
+\begin{tabular}{ c|c|c } 
+ \hline
+ {} & k, $\rho$, c & {} \\ 
+ $T_1$ & ${}$ & $T_2$  \\ 
+ $q_1$ & ${}$ & $q_2$   \\ 
+ ${}$ & L, A & ${}$  \\
+ \hline
+\end{tabular}
+\end{center}
+Where L is the distance between the nodes, A is the section area. Furthermore k is the thermal conductivity of the material, c the specific heat capacity of relevant material and $\rho$ the density. 
+\\ \\
+Let's do 
+\end{document}

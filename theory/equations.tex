@@ -1,0 +1,89 @@
+\maketitle
+Here are some mathematical equations that are used when finite elements are to be calculated:
+
+\begin{equation}
+    \dot{q_1} = {\frac{k}{L}}(T_1-T_2)
+\end{equation}
+\begin{equation}
+    \dot{q_2} = -{\frac{k}{L}}(T_1-T_2)
+\end{equation}
+\begin{equation}
+    \dot{\bar{q_2^e}} = \dot{\bar{k^e}}\cdot\dot{\bar{T^e}}
+\end{equation}
+
+\begin{equation}
+    \bar{k}^e = 
+    \begin{bmatrix}
+        k_{11}^e & k_{12}^e \\
+        k_{21}^e & k_{22}^e
+    \end{bmatrix}
+     = \frac{k}{L}
+     \begin{bmatrix}
+         1 & -1 \\
+         -1 & 1
+     \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\dot{\bar{T^e}} = 
+    \begin{Bmatrix}
+    T_1 \\ T_2
+    \end{Bmatrix}
+\end{equation}
+
+\begin{equation}
+\dot{\bar{q^e}} = 
+    \begin{Bmatrix}
+    q_1 \\ q_2
+    \end{Bmatrix}
+\end{equation}
+
+\begin{equation}
+    \bar{c^e} = \frac{L \cdot c \cdot \rho}{2}
+    \begin{bmatrix}
+        1 & 0 \\ 0 & 1
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \bar{K} = 
+    \begin{bmatrix}
+        k_{11}^1 & k_{12}^1 & 0 & 0 \\
+        k_{12}^1 & (k_{22}^1 + k_{11}^2) & k_{12}^2 & 0 \\
+        0 & k_{21}^2 & (k_{22}^2 + k_{11}^3) & k_{12}^3 \\
+        0 & 0 & k_{21}^3 & k_{22}^3
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \bar{C} \cdot \dot{\bar{T}} + \bar{K} \cdot \bar{T} = \bar{Q}
+\end{equation}
+
+\begin{equation}
+    \dot{Q_i} = 
+    \epsilon \sigma (T^4_r - T^4_{s,i}) + h(T_g - T_{s,i})
+\end{equation}
+
+\begin{equation}
+    \bar{\dot{T}} \cong \frac{\Delta\bar{T}}{\Delta t} = 
+    \frac{\bar{T}^{j+1} - \bar{T}^j}{\Delta t}
+\end{equation}
+
+\begin{equation}
+    \bar{C} = 
+    \begin{bmatrix}
+        \frac{\bar{T}^{j+1} - T^j}{\delta t}
+    \end{bmatrix}
+    + \bar{K}\bar{T} = \bar{Q}
+\end{equation}
+
+\begin{equation}
+    \bar{T}^{j+1} = 
+    \begin{pmatrix}
+    \frac{\bar{C}}{\Delta t} + \bar{K}
+    \end{pmatrix}^{-1}
+    \cdot
+    \begin{pmatrix}
+    \bar{Q}^j + \bar{C}\bar{T}^j
+    \end{pmatrix} \Delta t
+\end{equation}
