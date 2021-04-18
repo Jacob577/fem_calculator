@@ -20,6 +20,10 @@ class Equations:
         q2 = -self.k / self.length * (T0 - Ta)
         return np.array([[q1], [q2]])
 
+    def heat_flux(self, next_T, T, dt):
+        new_q = self.c*((next_T-T/dt)) + self.k*T
+        return new_q
+
     def next_temp(self, dt, q, T):
         T_next = (1/(self.c/dt + self.k))*(q+self.c*T)
 
