@@ -7,29 +7,6 @@ class Equations:
         self.length = length
         self.density = density
 
-    # def thermal_conductivity(self):
-    #     k_vector = (self.k/self.length)*np.array([[1, -1], [-1, 1]])
-    #     return k_vector
-    #
-    # def thermal_capacity(self):
-    #     c_vector = (self.length*self.c*self.density/2)*np.array([[1, -1], [-1, 1]])
-    #     return c_vector
-    #
-    # def heat_flux_initial(self, T0, Ta):
-    #     q1 = self.k/self.length*(T0 - Ta)
-    #     q2 = self.k / self.length*(Ta - T0)
-    #     return np.array([[q1], [q2]])
-    #
-    # def heat_flux(self, next_T, T, dt):
-    #     new_q = self.c*((next_T-T)/dt) + self.k*T
-    #     return new_q
-    #
-    # def next_temp(self, dt, q, T):
-    #     T_next = (1/(self.c/dt + self.k))*(q+self.c*T)
-    #     # T_next = T + ((dt * self.c)**(-1)) * (q - self.k * T)
-    #
-    #     return T_next
-
     def global_conductivity(self, elements):
         if elements == 1:
             k_global = np.array([[self.k, self.k], [self.k, self.k]])
@@ -89,7 +66,7 @@ class Equations:
 
             # dT = (next_temp - T_global)/dt
             q_global = k_global*next_temp + c_global*dT
-            print(dT)
+            print(next_temp)
             print('\n')
 
         return q_global, next_temp
