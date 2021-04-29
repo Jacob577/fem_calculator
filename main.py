@@ -41,8 +41,12 @@ class Main:
         # print(q_global)
         # print(T_global)
         # print(q_global)
-        # plt.plot(count2, count1)
-        # plt.show()
+        plt.plot(count2, count1)
+        plt.xlabel('Seconds [s]')
+        plt.ylabel('Temperature [C]')
+        plt.title('Temperature evolution first node')
+        plt.show()
+
         # print(count2)
 
 if __name__ == "__main__":
